@@ -1,0 +1,14 @@
+# Build output
+/build/
+/dist/
+
+# Saved simulation snapshots
+save.bin
+*.bin
+
+# Editor / OS cruft
+.vscode/
+.idea/
+*.user
+.DS_Store
+Thumbs.db
