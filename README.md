@@ -6,7 +6,11 @@ Pour water on sand, set wood on fire, drop gunpowder next to lava and watch it
 go. A 320×180 cellular grid simulated at a fixed 60 steps/second, rendered to a
 resizable 1280×720 window.
 
-![materials](assets/README.txt)
+### ▶️ [**Play it in your browser →**](https://navybluecheese.github.io/falling-sand/)
+
+No install needed — the same C++ is compiled to WebAssembly and runs entirely
+client-side. Or grab a native build from the
+[**Releases**](https://github.com/NavyBlueCheese/falling-sand/releases) page.
 
 ---
 
@@ -78,8 +82,23 @@ cmake -B build -G "MinGW Makefiles" && cmake --build build -j
 ./build/sand_sim.exe
 ```
 
-> **Font:** the HUD looks best with `assets/font.ttf` (see `assets/README.txt`).
-> Without it the program falls back to a system monospace font automatically.
+> **Font:** the HUD uses the bundled `assets/font.ttf` (JetBrains Mono). If it's
+> missing the program falls back to a system monospace font automatically.
+
+### Web (WebAssembly via Emscripten)
+
+The browser build at the link above is produced from the *same* source — the
+main loop is wrapped in `emscripten_set_main_loop` (see `src/main.cpp`) and SDL2 /
+SDL2_ttf come from Emscripten's built-in ports. The compiled site lives in
+`docs/` and is served by GitHub Pages.
+
+```bash
+# install + activate the Emscripten SDK (https://emscripten.org), then:
+./web/build_web.sh                 # macOS/Linux
+# or on Windows:
+powershell -ExecutionPolicy Bypass -File web\build_web.ps1
+# output: docs/index.{html,js,wasm,data}
+```
 
 ---
 
