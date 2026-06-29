@@ -12,3 +12,6 @@ save.bin
 *.user
 .DS_Store
 Thumbs.db
+
+# Release artifact (uploaded to Releases, not tracked)
+falling-sand-win64.zip
