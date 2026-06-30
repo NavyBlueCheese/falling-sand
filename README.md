@@ -6,11 +6,10 @@ Pour water on sand, set wood on fire, drop gunpowder next to lava and watch it
 go. A 320×180 cellular grid simulated at a fixed 60 steps/second, rendered to a
 resizable 1280×720 window.
 
-### ▶️ [**Play it in your browser →**](https://navybluecheese.github.io/falling-sand/)
+[**live site →**](https://navybluecheese.github.io/falling-sand/)
 
-No install needed — the same C++ is compiled to WebAssembly and runs entirely
-client-side. Or grab a native build from the
-[**Releases**](https://github.com/NavyBlueCheese/falling-sand/releases) page.
+(the same C++ is compiled to WebAssembly and runs entirely
+client-side.)
 
 ---
 
@@ -87,7 +86,7 @@ cmake -B build -G "MinGW Makefiles" && cmake --build build -j
 
 ### Web (WebAssembly via Emscripten)
 
-The browser build at the link above is produced from the *same* source — the
+The browser build at the link above is produced from the *same* source, the
 main loop is wrapped in `emscripten_set_main_loop` (see `src/main.cpp`) and SDL2 /
 SDL2_ttf come from Emscripten's built-in ports. The compiled site lives in
 `docs/` and is served by GitHub Pages.
@@ -127,7 +126,7 @@ A few design notes worth calling out (also commented inline):
   bias.
 - **One move per cell per step** via a `FLAG_UPDATED` bit, reset each frame.
 - **Dirty chunks**: a 16×16 block is only simulated if something in it (or a
-  neighbour) recently changed — that's what keeps mostly-settled scenes cheap.
+  neighbour) recently changed; that's what keeps mostly-settled scenes cheap.
 - **Fixed 60 Hz simulation, free render rate**: physics is frame-count based, so
   decoupling it from the render rate keeps behavior identical across machines.
 
