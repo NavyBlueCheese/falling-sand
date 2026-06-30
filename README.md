@@ -1,6 +1,6 @@
 # Falling Sand 🟡🔵🔥
 
-A real-time, pixel-based falling-sand & fluid sandbox in C++ with SDL2 — think
+A real-time, pixel-based falling-sand & fluid sandbox in C++ with SDL2, think
 *The Powder Toy* / *Noita*, with clean code you can actually read and extend.
 Pour water on sand, set wood on fire, drop gunpowder next to lava and watch it
 go. A 320×180 cellular grid simulated at a fixed 60 steps/second, rendered to a
