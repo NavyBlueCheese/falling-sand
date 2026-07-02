@@ -6,7 +6,7 @@ Pour water on sand, set wood on fire, drop gunpowder next to lava and watch it
 go. A 320×180 cellular grid simulated at a fixed 60 steps/second, rendered to a
 resizable 1280×720 window.
 
-[**live site →**](https://navybluecheese.github.io/falling-sand/)
+[**live site**](https://navybluecheese.github.io/falling-sand/)
 
 (the same C++ is compiled to WebAssembly and runs entirely
 client-side.)
